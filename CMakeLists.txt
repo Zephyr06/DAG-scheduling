@@ -12,9 +12,10 @@ option(WITH_ZAHAF "Compiling also for Zahaf2019 test (if you have the rights to 
 #-------------------------------------------------------------------------------
 # External Libraries
 #-------------------------------------------------------------------------------
-find_package(Eigen3 REQUIRED)
-include_directories(${EIGEN3_INCLUDE_DIR})
-
+# find_package(Eigen3 REQUIRED)
+# include_directories(${EIGEN3_INCLUDE_DIR})
+include_directories(/home/zephyr/Library/)
+include_directories(/usr/include/numpy)
 find_package(yaml-cpp REQUIRED)
 
 find_package(Python3 COMPONENTS Interpreter Development)
@@ -40,7 +41,7 @@ endif()
 # Build libraries
 #-------------------------------------------------------------------------------
 
-
+include_directories(/usr/lib/python3/dist-packages/numpy/core/include/)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include matplotlib-cpp 
                     ${CMAKE_CURRENT_SOURCE_DIR}/np-schedulability-analysis/include 
                     ${Python3_INCLUDE_DIRS})
